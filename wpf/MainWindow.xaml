@@ -1,0 +1,29 @@
+﻿<Window x:Class="DolgozatWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DolgozatWPF"
+        mc:Ignorable="d"
+        Title="Dolgozatok" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50px"/>
+            <RowDefinition Height="60px"/>
+        </Grid.RowDefinitions>
+        <DataGrid d:ItemsSource="{d:SampleData ItemCount=5}" x:Name="tabla"/>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" Margin="10">
+            <Label Content="Név:"/>
+            <TextBox x:Name="nevmezo" Width="70"/>
+            <Label Content="Életkor:"/>
+            <TextBox x:Name="kormezo" Width="70"/>
+            <Label Content="Pontszám:"/>
+            <TextBox x:Name="pontmezo" Width="70"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" Margin="10">
+            <Button Content="Hozzáadás" Margin="5" Width="70" x:Name="hozzaad" Click="hozzaadas"></Button>
+            <Button Content="Mentés" Margin="5" Width="70" x:Name="ment" Click="mentes"></Button>
+        </StackPanel>
+    </Grid>
+</Window>
